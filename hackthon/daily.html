@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sticky Planner</title>
+  <link rel="stylesheet" href="daily.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>🗒️ Pebbles & Plans</h1>
+    <div class="btns">
+      <button id="add-note-btn">Add Note</button>
+      <button id="settings-btn">⚙️</button>
+      <button id="calendar-btn">📅</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="note-board"></section>
+    <div id="progress-container">
+      <div id="progress-bar"><div id="progress-fill"></div></div>
+      <div id="progress-text">0% Completed</div>
+    </div>
+  </main>
+
+  <!-- Settings Modal -->
+  <div class="modal" id="settings-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('settings-modal')">&times;</span>
+      <h2>Settings</h2>
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select">
+        <option value="default">Default</option>
+        <option value="dark">Dark Mode</option>
+        <option value="pastel">Pastel</option>
+        <option value="cyberpunk">Cyberpunk</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Calendar Modal -->
+  <div class="modal" id="calendar-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('calendar-modal')">&times;</span>
+      <h2>Calendar</h2>
+      <input type="date" id="note-date" />
+      <button onclick="filterByDate()">View Notes</button>
+    </div>
+  </div>
+
+  <!-- Add Note Modal -->
+  <div class="modal" id="add-note-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('add-note-modal')">&times;</span>
+      <h2>Add a New Note</h2>
+      <textarea id="note-input" placeholder="Your note..."></textarea>
+      <input type="date" id="note-date-input" />
+      <button onclick="saveNote()">Save Note</button>
+    </div>
+  </div>
+
+  <script src="daily.js"></script>
+</body>
+</html>
